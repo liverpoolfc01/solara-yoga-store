@@ -14,7 +14,12 @@ const JWT_SECRET = process.env.JWT_SECRET || "solara-yoga-secret-change-in-produ
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/admin", express.static(path.join(__dirname, "admin")));
+app.use("/admin", express.static(path.join(__dirname, "admin"), { index: "index.html" }));
+
+// Redirect /admin to /admin/ for proper static serving
+app.get("/admin", (req, res) => {
+  res.redirect(301, "/admin/");
+});
 
 // ── Auth Middleware ───────────────────────────────────────────────────────────
 function authRequired(req, res, next) {
@@ -387,8 +392,12 @@ app.get("/api/admin/reviews", adminRequired, (req, res) => {
 
 // ── Serve SPA fallback ───────────────────────────────────────────────────────
 app.get("*", (req, res) => {
-  if (req.path.startsWith("/api/") || req.path.startsWith("/admin/")) {
+  if (req.path.startsWith("/api/")) {
     return res.status(404).json({ error: "Not found" });
+  }
+  // Let /admin/* paths fall through — static middleware already handled them
+  if (req.path.startsWith("/admin")) {
+    return res.status(404).send("Admin page not found");
   }
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
