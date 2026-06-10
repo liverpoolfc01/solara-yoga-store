@@ -209,10 +209,22 @@ function seedData() {
     { id: "grip-socks", name: "Studio Grip Socks", category: "Accessories", activity: "Yoga,Pilates", price: 14, compareAt: null, rating: 4.3, reviews: 210, badge: "Core", sizes: "S,M,L", colors: "Sage,Plum,Charcoal,Oat", swatches: "#7d8a75,#7a415d,#343232,#d9d0c4", fabric: "Organic cotton + silicone grips", fit: "True to size, silicone dot sole.", desc: "Non-slip grip socks with arch support for barre, pilates, and studio sessions without a mat.", pos: "70% 92%", scale: 1.0, release: 1, stock: 250 }
   ];
 
+  const categoryImages = {
+    "Leggings": "./assets/prod-leggings.svg",
+    "Sports Bras": "./assets/prod-bra.svg",
+    "Tops": "./assets/prod-tank.svg",
+    "Matching Sets": "./assets/prod-set.svg",
+    "Shorts": "./assets/prod-shorts.svg",
+    "Pants": "./assets/prod-pants.svg",
+    "Layers": "./assets/prod-hoodie.svg",
+    "Accessories": "./assets/prod-mat.svg"
+  };
+
   const stmt = db.prepare("INSERT INTO products (id, name, category, activity, price, compare_at, rating, reviews, badge, sizes, colors, swatches, fabric, fit, description, position, scale, image, release, stock) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
   for (const p of products) {
-    stmt.run([p.id, p.name, p.category, p.activity, p.price, p.compareAt, p.rating, p.reviews, p.badge, p.sizes, p.colors, p.swatches, p.fabric, p.fit, p.desc, p.pos, p.scale, "./assets/yoga-collection.svg", p.release, p.stock]);
+    const img = categoryImages[p.category] || "./assets/yoga-collection.svg";
+    stmt.run([p.id, p.name, p.category, p.activity, p.price, p.compareAt, p.rating, p.reviews, p.badge, p.sizes, p.colors, p.swatches, p.fabric, p.fit, p.desc, p.pos, p.scale, img, p.release, p.stock]);
   }
   stmt.free();
 }

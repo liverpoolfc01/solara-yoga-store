@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <defs>
+    <radialGradient id="light" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="fold1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b8866e"/>
+      <stop offset="50%" style="stop-color:#a07060"/>
+      <stop offset="100%" style="stop-color:#b8866e"/>
+    </linearGradient>
+    <linearGradient id="shadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(0,0,0,0)"/>
+      <stop offset="100%" style="stop-color:rgba(0,0,0,0.08)"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="0.5"/></filter>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="1000" fill="undefined"/>
+  <!-- Floor shadow -->
+  <ellipse cx="400" cy="880" rx="260" ry="30" fill="rgba(0,0,0,0.06)"/>
+  
+  <!-- Yoga Mat -->
+  <rect x="180" y="480" width="440" height="420" rx="8" fill="#e8e0d8" opacity="0.7"/>
+  <rect x="220" y="500" width="360" height="380" rx="4" fill="#f2ebe4" opacity="0.5"/>
+  <!-- Mat texture lines -->
+  <line x1="250" y1="550" x2="550" y2="550" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
+  <line x1="250" y1="600" x2="550" y2="600" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
+  <line x1="250" y1="650" x2="550" y2="650" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
+  <line x1="250" y1="700" x2="550" y2="700" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
+  
+  <!-- Top / Bra -->
+  <path d="M260,260 L300,180 Q320,160 340,170 L350,190 L330,210 L370,220 L380,240 Q390,260 380,270 L340,280 L310,290 Z" fill="#b8866e" stroke="#a07060" stroke-width="1" filter="url(#soft)"/>
+  <!-- Bra straps -->
+  <path d="M280,200 L250,120 Q240,110 245,105 L255,100 L270,190" fill="none" stroke="#b8866e" stroke-width="3"/>
+  <path d="M340,190 L360,115 Q365,108 370,110 L375,120 L355,200" fill="none" stroke="#b8866e" stroke-width="3"/>
+  
+  <!-- Legging / Bottom -->
+  <path d="M250,360 L240,440 Q235,520 230,600 L240,680 Q250,740 280,760 L320,780 Q360,790 380,770 L410,740 Q420,700 420,640 L425,560 Q430,480 420,400 L410,360 Z" fill="#b8866e" filter="url(#soft)"/>
+  <!-- Legging waistband -->
+  <rect x="240" y="340" width="200" height="28" rx="4" fill="#a07060" opacity="0.6"/>
+  <!-- Legging seam -->
+  <line x1="340" y1="350" x2="335" y2="740" stroke="#a07060" stroke-width="1" opacity="0.3"/>
+  
+  
+  <!-- Light highlight -->
+  <rect width="800" height="1000" fill="url(#light)"/>
+</svg>

@@ -1,63 +1,69 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1440' height='960' viewBox='0 0 1440 960'>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
   <defs>
-    <linearGradient id='sky' x1='0%' y1='0%' x2='100%' y2='100%'>
-      <stop offset='0%' style='stop-color:#fdf6f0'/>
-      <stop offset='30%' style='stop-color:#f9ede2'/>
-      <stop offset='70%' style='stop-color:#efe0d0'/>
-      <stop offset='100%' style='stop-color:#e8d5c0'/>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8ddd0"/>
+      <stop offset="40%" style="stop-color:#f0e8dd"/>
+      <stop offset="100%" style="stop-color:#f5efe6"/>
     </linearGradient>
-    <linearGradient id='sun' x1='0%' y1='0%' x2='100%' y2='100%'>
-      <stop offset='0%' style='stop-color:#fff9f2'/>
-      <stop offset='100%' style='stop-color:#f5e6d3'/>
+    <linearGradient id="floor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e5ddd2"/>
+      <stop offset="100%" style="stop-color:#dcd3c6"/>
     </linearGradient>
-    <radialGradient id='glow' cx='70%' cy='30%' r='60%'>
-      <stop offset='0%' style='stop-color:#fff;stop-opacity:0.9'/>
-      <stop offset='100%' style='stop-color:#fff;stop-opacity:0'/>
+    <radialGradient id="sun" cx="80%" cy="15%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#fff;stop-opacity:0"/>
     </radialGradient>
-    <filter id='soft'><feGaussianBlur stdDeviation='2'/></filter>
   </defs>
-
-  <!-- Background -->
-  <rect width='1440' height='960' fill='url(#sky)'/>
-
-  <!-- Sun glow -->
-  <circle cx='1050' cy='280' r='400' fill='url(#glow)'/>
-
-  <!-- Floor -->
-  <rect x='0' y='680' width='1440' height='280' fill='#e8ddd0' opacity='0.7'/>
-  <line x1='0' y1='680' x2='1440' y2='680' stroke='#ddd4c5' stroke-width='1'/>
-
-  <!-- Yoga mat 1 -->
-  <rect x='380' y='520' width='180' height='320' rx='4' fill='#7d8a75' transform='rotate(-8,470,680)' opacity='0.8'/>
-  <rect x='390' y='530' width='160' height='300' rx='2' fill='#8fa88a' transform='rotate(-8,470,680)' opacity='0.6'/>
-
-  <!-- Yoga mat 2 -->
-  <rect x='780' y='500' width='180' height='340' rx='4' fill='#a66f55' transform='rotate(5,870,670)' opacity='0.8'/>
-  <rect x='790' y='510' width='160' height='320' rx='2' fill='#bf8a72' transform='rotate(5,870,670)' opacity='0.6'/>
-
-  <!-- Decorative plant left -->
-  <ellipse cx='120' cy='600' rx='80' ry='120' fill='#8aaa84' opacity='0.5'/>
-  <ellipse cx='80' cy='550' rx='60' ry='100' fill='#9cba96' opacity='0.4'/>
-  <ellipse cx='160' cy='580' rx='50' ry='90' fill='#7d9a75' opacity='0.45'/>
-
-  <!-- Decorative plant right -->
-  <ellipse cx='1320' cy='580' rx='70' ry='110' fill='#9cba96' opacity='0.4'/>
-  <ellipse cx='1360' cy='530' rx='50' ry='90' fill='#8aaa84' opacity='0.35'/>
-
-  <!-- Floating yoga silhouette (simple geometric) -->
-  <g transform='translate(900,400)' opacity='0.12'>
-    <circle cx='0' cy='0' r='30' fill='#74415b'/>
-    <ellipse cx='0' cy='60' rx='40' ry='70' fill='#74415b'/>
-    <line x1='-35' y1='100' x2='-60' y2='160' stroke='#74415b' stroke-width='8' stroke-linecap='round'/>
-    <line x1='35' y1='100' x2='60' y2='160' stroke='#74415b' stroke-width='8' stroke-linecap='round'/>
-    <line x1='-20' y1='30' x2='-70' y2='-20' stroke='#74415b' stroke-width='7' stroke-linecap='round'/>
-    <line x1='20' y1='30' x2='70' y2='-20' stroke='#74415b' stroke-width='7' stroke-linecap='round'/>
+  
+  <!-- Sky/Background -->
+  <rect width="1440" height="900" fill="url(#sky)"/>
+  <rect width="1440" height="900" fill="url(#sun)"/>
+  
+  <!-- Plants - left -->
+  <ellipse cx="80" cy="700" rx="90" ry="140" fill="#8baa84" opacity="0.5"/>
+  <ellipse cx="140" cy="650" rx="60" ry="100" fill="#9bba94" opacity="0.4"/>
+  <ellipse cx="50" cy="600" rx="50" ry="80" fill="#7a9a72" opacity="0.45"/>
+  <!-- Plant pot -->
+  <rect x="30" y="720" width="80" height="90" rx="6" fill="#c4b8a8"/>
+  <ellipse cx="70" cy="720" rx="40" ry="8" fill="#b0a494"/>
+  
+  <!-- Plants - right -->
+  <ellipse cx="1360" cy="680" rx="70" ry="110" fill="#9bba94" opacity="0.35"/>
+  <ellipse cx="1320" cy="620" rx="50" ry="80" fill="#8baa84" opacity="0.3"/>
+  
+  <!-- Yoga mat on floor -->
+  <g transform="translate(520, 520) rotate(-3)">
+    <rect x="0" y="0" width="400" height="280" rx="6" fill="#7d9178" opacity="0.75"/>
+    <rect x="20" y="15" width="360" height="250" rx="4" fill="#8fa88a" opacity="0.5"/>
+    <!-- Mat center line -->
+    <line x1="200" y1="30" x2="200" y2="250" stroke="#6b7e67" stroke-width="2" opacity="0.4"/>
+    <!-- Person silhouette on mat (simple abstract) -->
+    <g transform="translate(200, 100)" opacity="0.15">
+      <circle cx="0" cy="0" r="18" fill="#1a1a1a"/>
+      <ellipse cx="0" cy="55" rx="28" ry="50" fill="#1a1a1a"/>
+      <line x1="-25" y1="70" x2="-45" y2="110" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
+      <line x1="25" y1="70" x2="45" y2="110" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
+      <line x1="-15" y1="25" x2="-50" y2="-10" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
+      <line x1="15" y1="25" x2="50" y2="-10" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
+    </g>
   </g>
-
-  <!-- Small decorative circles (light particles) -->
-  <circle cx='600' cy='300' r='3' fill='#d4c0a8' opacity='0.6'/>
-  <circle cx='800' cy='200' r='4' fill='#d4c0a8' opacity='0.5'/>
-  <circle cx='700' cy='400' r='2' fill='#d4c0a8' opacity='0.7'/>
-  <circle cx='1000' cy='350' r='3' fill='#d4c0a8' opacity='0.4'/>
-  <circle cx='500' cy='250' r='2' fill='#d4c0a8' opacity='0.5'/>
+  
+  <!-- Second mat (slightly behind) -->
+  <rect x="640" y="500" width="380" height="270" rx="6" fill="#a07060" opacity="0.5" transform="rotate(5, 830, 635)"/>
+  
+  <!-- Floor area -->
+  <rect x="0" y="700" width="1440" height="200" fill="url(#floor)" opacity="0.5"/>
+  <!-- Floor line -->
+  <line x1="0" y1="700" x2="1440" y2="700" stroke="#d4c9b8" stroke-width="1"/>
+  
+  <!-- Yoga blocks -->
+  <rect x="750" y="640" width="45" height="70" rx="5" fill="#d9d0c4"/>
+  <rect x="800" y="650" width="45" height="70" rx="5" fill="#e5ddd4"/>
+  
+  <!-- Water bottle -->
+  <rect x="320" y="630" width="28" height="70" rx="14" fill="#406080" opacity="0.7"/>
+  <circle cx="334" cy="630" r="12" fill="#305070" opacity="0.6"/>
+  
+  <!-- Decorative text overlay (faded) -->
+  <text x="720" y="820" text-anchor="middle" font-family="serif" font-size="80" font-weight="300" fill="#c4b8a8" opacity="0.3" letter-spacing="20">SOLARA</text>
 </svg>
