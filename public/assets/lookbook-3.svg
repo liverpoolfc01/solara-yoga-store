@@ -1,19 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#f6f4f0"/>
-      <stop offset="100%" style="stop-color:#ede6dc"/>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6f2ec"/>
+      <stop offset="100%" stop-color="#eae0d2"/>
     </linearGradient>
   </defs>
-  <rect width="600" height="750" fill="url(#bg)"/>
-  <!-- Travel bag -->
-  <rect x="160" y="300" width="280" height="200" rx="20" fill="#b8866e"/>
-  <rect x="180" y="320" width="240" height="160" rx="12" fill="#c49a82" opacity="0.5"/>
-  <path d="M200,300 Q300,240 400,300" fill="none" stroke="#a07060" stroke-width="4"/>
-  <!-- Folded clothes -->
-  <rect x="220" y="360" width="160" height="80" rx="6" fill="#e8e0d8" transform="rotate(2,300,400)"/>
-  <!-- Water bottle -->
-  <rect x="420" y="400" width="30" height="80" rx="15" fill="#406080" opacity="0.6"/>
-  <text x="300" y="600" text-anchor="middle" font-size="16" font-weight="700">TRAVEL EASE</text>
-  <text x="300" y="624" text-anchor="middle" font-size="12" fill="#8a8a8a">Soft pant + travel hoodie</text>
+  <rect width="600" height="750" fill="url(#g)"/>
+  <!-- Mat -->
+  <rect x="100" y="260" width="400" height="400" rx="8" fill="#8b5e7a" opacity="0.6"/>
+  <!-- Person - seated meditation -->
+  <g transform="translate(300,420)" opacity="0.18">
+    <circle cx="0" cy="-60" r="22" fill="#1a1a1a"/>
+    <ellipse cx="0" cy="10" rx="30" ry="50" fill="#1a1a1a"/>
+    <line x1="-25" y1="40" x2="-60" y2="80" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+    <line x1="25" y1="40" x2="60" y2="80" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+    <line x1="-20" y1="-30" x2="-60" y2="-10" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
+    <line x1="20" y1="-30" x2="60" y2="-10" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="300" y="720" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a1a">TRAVEL EASE</text>
 </svg>

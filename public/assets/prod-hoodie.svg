@@ -1,48 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750">
   <defs>
-    <radialGradient id="light" cx="50%" cy="30%" r="70%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.6"/>
-      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
-    </radialGradient>
-    <linearGradient id="fold1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4a4a4a"/>
-      <stop offset="50%" style="stop-color:#363636"/>
-      <stop offset="100%" style="stop-color:#4a4a4a"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f2ee"/>
+      <stop offset="100%" stop-color="#f4f2ee" stop-opacity="0.6"/>
     </linearGradient>
-    <linearGradient id="shadow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:rgba(0,0,0,0)"/>
-      <stop offset="100%" style="stop-color:rgba(0,0,0,0.08)"/>
+    <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4e4e4e"/>
+      <stop offset="50%" stop-color="#383838"/>
+      <stop offset="100%" stop-color="#4e4e4e"/>
     </linearGradient>
-    <filter id="soft"><feGaussianBlur stdDeviation="0.5"/></filter>
   </defs>
-  <!-- Background -->
-  <rect width="800" height="1000" fill="undefined"/>
-  <!-- Floor shadow -->
-  <ellipse cx="400" cy="880" rx="260" ry="30" fill="rgba(0,0,0,0.06)"/>
-  
-  <!-- Yoga Mat -->
-  <rect x="180" y="480" width="440" height="420" rx="8" fill="#e8e0d8" opacity="0.7"/>
-  <rect x="220" y="500" width="360" height="380" rx="4" fill="#f2ebe4" opacity="0.5"/>
-  <!-- Mat texture lines -->
-  <line x1="250" y1="550" x2="550" y2="550" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
-  <line x1="250" y1="600" x2="550" y2="600" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
-  <line x1="250" y1="650" x2="550" y2="650" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
-  <line x1="250" y1="700" x2="550" y2="700" stroke="#e0d6cc" stroke-width="0.5" opacity="0.5"/>
-  
-  <!-- Top / Bra -->
-  <path d="M260,260 L300,180 Q320,160 340,170 L350,190 L330,210 L370,220 L380,240 Q390,260 380,270 L340,280 L310,290 Z" fill="#4a4a4a" stroke="#363636" stroke-width="1" filter="url(#soft)"/>
-  <!-- Bra straps -->
-  <path d="M280,200 L250,120 Q240,110 245,105 L255,100 L270,190" fill="none" stroke="#4a4a4a" stroke-width="3"/>
-  <path d="M340,190 L360,115 Q365,108 370,110 L375,120 L355,200" fill="none" stroke="#4a4a4a" stroke-width="3"/>
-  
-  <!-- Legging / Bottom -->
-  <path d="M250,360 L240,440 Q235,520 230,600 L240,680 Q250,740 280,760 L320,780 Q360,790 380,770 L410,740 Q420,700 420,640 L425,560 Q430,480 420,400 L410,360 Z" fill="#4a4a4a" filter="url(#soft)"/>
-  <!-- Legging waistband -->
-  <rect x="240" y="340" width="200" height="28" rx="4" fill="#363636" opacity="0.6"/>
-  <!-- Legging seam -->
-  <line x1="340" y1="350" x2="335" y2="740" stroke="#363636" stroke-width="1" opacity="0.3"/>
-  
-  
-  <!-- Light highlight -->
-  <rect width="800" height="1000" fill="url(#light)"/>
+  <rect width="600" height="750" fill="url(#bg)"/>
+  <!-- Large centered clothing item filling most of the frame -->
+  <rect x="60" y="80" width="480" height="590" rx="16" fill="url(#fold)"/>
+  <!-- Neckline / waistband detail -->
+  <rect x="120" y="80" width="360" height="40" rx="8" fill="#383838" opacity="0.5"/>
+  <!-- Side seam shadow -->
+  <rect x="500" y="120" width="20" height="510" rx="4" fill="rgba(0,0,0,0.08)"/>
+  <!-- Center fold line -->
+  <line x1="300" y1="120" x2="300" y2="630" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+  <!-- Subtle fabric texture lines -->
+  <line x1="150" y1="200" x2="150" y2="600" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <line x1="450" y1="200" x2="450" y2="600" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+  <!-- Hem -->
+  <rect x="60" y="640" width="480" height="30" rx="6" fill="#383838" opacity="0.4"/>
+  <!-- Label text -->
+  <text x="300" y="720" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(0,0,0,0.2)" letter-spacing="4">JACKET</text>
 </svg>

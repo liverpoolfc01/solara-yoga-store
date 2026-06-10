@@ -1,69 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800">
   <defs>
-    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#e8ddd0"/>
-      <stop offset="40%" style="stop-color:#f0e8dd"/>
-      <stop offset="100%" style="stop-color:#f5efe6"/>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5ede0"/>
+      <stop offset="50%" stop-color="#efe4d4"/>
+      <stop offset="100%" stop-color="#e8d9c4"/>
     </linearGradient>
-    <linearGradient id="floor" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#e5ddd2"/>
-      <stop offset="100%" style="stop-color:#dcd3c6"/>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0d2bb"/>
+      <stop offset="100%" stop-color="#d4c4aa"/>
     </linearGradient>
-    <radialGradient id="sun" cx="80%" cy="15%" r="50%">
-      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#fff;stop-opacity:0"/>
+    <radialGradient id="window" cx="75%" cy="15%" r="40%">
+      <stop offset="0%" stop-color="#fff9f0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fff9f0" stop-opacity="0"/>
     </radialGradient>
   </defs>
   
-  <!-- Sky/Background -->
-  <rect width="1440" height="900" fill="url(#sky)"/>
-  <rect width="1440" height="900" fill="url(#sun)"/>
+  <!-- Wall -->
+  <rect width="1440" height="600" fill="url(#wall)"/>
+  <!-- Floor -->
+  <rect y="600" width="1440" height="200" fill="url(#floor)"/>
+  <!-- Window light -->
+  <rect width="1440" height="800" fill="url(#window)"/>
   
-  <!-- Plants - left -->
-  <ellipse cx="80" cy="700" rx="90" ry="140" fill="#8baa84" opacity="0.5"/>
-  <ellipse cx="140" cy="650" rx="60" ry="100" fill="#9bba94" opacity="0.4"/>
-  <ellipse cx="50" cy="600" rx="50" ry="80" fill="#7a9a72" opacity="0.45"/>
-  <!-- Plant pot -->
-  <rect x="30" y="720" width="80" height="90" rx="6" fill="#c4b8a8"/>
-  <ellipse cx="70" cy="720" rx="40" ry="8" fill="#b0a494"/>
-  
-  <!-- Plants - right -->
-  <ellipse cx="1360" cy="680" rx="70" ry="110" fill="#9bba94" opacity="0.35"/>
-  <ellipse cx="1320" cy="620" rx="50" ry="80" fill="#8baa84" opacity="0.3"/>
-  
-  <!-- Yoga mat on floor -->
-  <g transform="translate(520, 520) rotate(-3)">
-    <rect x="0" y="0" width="400" height="280" rx="6" fill="#7d9178" opacity="0.75"/>
-    <rect x="20" y="15" width="360" height="250" rx="4" fill="#8fa88a" opacity="0.5"/>
-    <!-- Mat center line -->
-    <line x1="200" y1="30" x2="200" y2="250" stroke="#6b7e67" stroke-width="2" opacity="0.4"/>
-    <!-- Person silhouette on mat (simple abstract) -->
-    <g transform="translate(200, 100)" opacity="0.15">
-      <circle cx="0" cy="0" r="18" fill="#1a1a1a"/>
-      <ellipse cx="0" cy="55" rx="28" ry="50" fill="#1a1a1a"/>
-      <line x1="-25" y1="70" x2="-45" y2="110" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
-      <line x1="25" y1="70" x2="45" y2="110" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
-      <line x1="-15" y1="25" x2="-50" y2="-10" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
-      <line x1="15" y1="25" x2="50" y2="-10" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
-    </g>
+  <!-- Large yoga mat center -->
+  <g transform="translate(560,380) rotate(-2)">
+    <rect x="0" y="0" width="320" height="420" rx="8" fill="#7d9178" opacity="0.8"/>
+    <rect x="15" y="12" width="290" height="396" rx="5" fill="#90a58b" opacity="0.4"/>
+    <!-- Mat lines -->
+    <line x1="160" y1="30" x2="160" y2="390" stroke="#6a7d65" stroke-width="1.5" opacity="0.3"/>
+    <line x1="40" y1="200" x2="280" y2="200" stroke="#6a7d65" stroke-width="0.5" opacity="0.2"/>
   </g>
   
-  <!-- Second mat (slightly behind) -->
-  <rect x="640" y="500" width="380" height="270" rx="6" fill="#a07060" opacity="0.5" transform="rotate(5, 830, 635)"/>
+  <!-- Second mat -->
+  <g transform="translate(200,360) rotate(3)">
+    <rect width="280" height="380" rx="8" fill="#a07060" opacity="0.6"/>
+    <rect x="12" y="10" width="256" height="360" rx="5" fill="#b88878" opacity="0.3"/>
+  </g>
   
-  <!-- Floor area -->
-  <rect x="0" y="700" width="1440" height="200" fill="url(#floor)" opacity="0.5"/>
-  <!-- Floor line -->
-  <line x1="0" y1="700" x2="1440" y2="700" stroke="#d4c9b8" stroke-width="1"/>
+  <!-- Plant - left -->
+  <ellipse cx="80" cy="460" rx="70" ry="110" fill="#8aaa84" opacity="0.6"/>
+  <ellipse cx="130" cy="420" rx="50" ry="85" fill="#9cba96" opacity="0.5"/>
+  <ellipse cx="50" cy="390" rx="45" ry="75" fill="#7a9a72" opacity="0.55"/>
+  
+  <!-- Plant - right -->
+  <ellipse cx="1360" cy="480" rx="60" ry="100" fill="#9cba96" opacity="0.45"/>
+  <ellipse cx="1400" cy="430" rx="45" ry="80" fill="#8aaa84" opacity="0.4"/>
   
   <!-- Yoga blocks -->
-  <rect x="750" y="640" width="45" height="70" rx="5" fill="#d9d0c4"/>
-  <rect x="800" y="650" width="45" height="70" rx="5" fill="#e5ddd4"/>
+  <rect x="620" y="560" width="40" height="65" rx="6" fill="#d9d0c4"/>
+  <rect x="670" y="570" width="40" height="65" rx="6" fill="#e5ddd4"/>
   
   <!-- Water bottle -->
-  <rect x="320" y="630" width="28" height="70" rx="14" fill="#406080" opacity="0.7"/>
-  <circle cx="334" cy="630" r="12" fill="#305070" opacity="0.6"/>
+  <rect x="340" y="580" width="30" height="80" rx="15" fill="#2d4a6e" opacity="0.7"/>
+  <circle cx="355" cy="580" r="14" fill="#3a5a80" opacity="0.5"/>
   
-  <!-- Decorative text overlay (faded) -->
-  <text x="720" y="820" text-anchor="middle" font-family="serif" font-size="80" font-weight="300" fill="#c4b8a8" opacity="0.3" letter-spacing="20">SOLARA</text>
+  <!-- Subtle brand text -->
+  <text x="720" y="740" text-anchor="middle" font-family="Georgia,serif" font-size="72" fill="#c4b8a8" opacity="0.25" letter-spacing="24">SOLARA</text>
 </svg>
