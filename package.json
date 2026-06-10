@@ -1,0 +1,19 @@
+{
+  "name": "solara-yoga-store",
+  "version": "2.0.0",
+  "description": "Solara Yoga - Premium Yoga Activewear Store with backend, admin panel, and full e-commerce features",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node db.js"
+  },
+  "dependencies": {
+    "sql.js": "^1.12.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^10.0.0"
+  }
+}
