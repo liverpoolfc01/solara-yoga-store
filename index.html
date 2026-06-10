@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solara Yoga | Premium Yoga Activewear</title>
+    <meta name="description" content="Shop premium yoga activewear with account sign up, wishlist, product filters, cart, size guide, and international checkout." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="announce">
+      <span>Complimentary worldwide shipping over $120</span>
+      <span>30-day returns</span>
+      <span>Duties shown at checkout</span>
+    </div>
+
+    <header class="site-header" aria-label="Main navigation">
+      <button class="icon-action mobile-only" type="button" id="menuButton" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="#top" aria-label="Solara Yoga home">
+        <span class="brand-mark">S</span><span>Solara Yoga</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Store sections">
+        <div class="nav-item">
+          <a href="#shop">Women</a>
+          <div class="mega-menu" aria-label="Women menu">
+            <div>
+              <strong>Featured Shops</strong>
+              <a href="#shop" data-nav-filter="Best Sellers">Best Sellers</a>
+              <a href="#shop" data-nav-filter="New Arrivals">New Arrivals</a>
+              <a href="#shop" data-nav-filter="Matching Sets">Matching Sets</a>
+              <a href="#shop" data-nav-filter="Sale">Final Few</a>
+            </div>
+            <div>
+              <strong>Clothing</strong>
+              <a href="#shop" data-nav-filter="Leggings">Leggings</a>
+              <a href="#shop" data-nav-filter="Sports Bras">Sports Bras</a>
+              <a href="#shop" data-nav-filter="Tops">Tops</a>
+              <a href="#shop" data-nav-filter="Layers">Jackets and Wraps</a>
+            </div>
+            <div>
+              <strong>Shop by Activity</strong>
+              <a href="#shop" data-activity-filter="Yoga">Yoga</a>
+              <a href="#shop" data-activity-filter="Pilates">Pilates</a>
+              <a href="#shop" data-activity-filter="Run">Run</a>
+              <a href="#shop" data-activity-filter="Travel">Travel</a>
+            </div>
+          </div>
+        </div>
+        <a href="#shop" data-nav-filter="New Arrivals">New In</a>
+        <a href="#lookbook">Lookbook</a>
+        <a href="#fit">Size Guide</a>
+        <a href="#shipping">Shipping</a>
+      </nav>
+      <div class="header-actions">
+        <button class="header-link" type="button" id="searchFocus">Search</button>
+        <button class="header-link" type="button" id="accountButton">Account</button>
+        <button class="header-link" type="button" id="wishlistButton">Wishlist <span id="wishlistCount">0</span></button>
+        <button class="bag-button" type="button" id="openCart" aria-label="Open shopping bag">Bag <span id="cartCount">0</span></button>
+      </div>
+    </header>
+
+    <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-panel">
+        <div class="drawer-head">
+          <strong>Shop Solara</strong>
+          <button class="round-button" type="button" id="closeMenu" aria-label="Close menu">x</button>
+        </div>
+        <a href="#shop" data-mobile-filter="All">Shop All</a>
+        <a href="#shop" data-mobile-filter="New Arrivals">New Arrivals</a>
+        <a href="#shop" data-mobile-filter="Matching Sets">Matching Sets</a>
+        <a href="#shop" data-mobile-filter="Leggings">Leggings</a>
+        <a href="#shop" data-mobile-filter="Sports Bras">Sports Bras</a>
+        <a href="#fit">Size Guide</a>
+        <a href="#shipping">Shipping and Returns</a>
+        <a href="/track.html">Track Order</a>
+      </div>
+    </aside>
+
+    <main id="top">
+      <section class="hero" aria-label="Premium yoga activewear">
+        <img src="./assets/yoga-hero.svg" alt="Women wearing coordinated yoga activewear in a bright studio" />
+        <div class="hero-copy">
+          <p class="eyebrow">New Studio-to-Street Collection</p>
+          <h1>Quiet luxury activewear for every flow.</h1>
+          <p>Sculpting sets, breathable layers, and polished essentials made for yoga, pilates, travel, and everyday movement.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#shop">Shop New Arrivals</a>
+            <a class="secondary-action" href="#lookbook">Explore Lookbook</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="category-strip" aria-label="Popular categories">
+        <a href="#shop" data-nav-filter="Matching Sets"><span>01</span><strong>Matching Sets</strong></a>
+        <a href="#shop" data-nav-filter="Leggings"><span>02</span><strong>Leggings</strong></a>
+        <a href="#shop" data-nav-filter="Sports Bras"><span>03</span><strong>Sports Bras</strong></a>
+        <a href="#shop" data-nav-filter="Accessories"><span>04</span><strong>Accessories</strong></a>
+      </section>
+
+      <section class="collection-band" id="shop">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">Shop</p><h2>Everything your customer expects in a real activewear store.</h2></div>
+          <p>Search, filter, save favorites, choose sizes, open quick views, add to bag, and move into international checkout — now connected to a real backend.</p>
+        </div>
+
+        <div class="shop-shell">
+          <aside class="filter-panel" aria-label="Product filters">
+            <div class="filter-block"><label for="productSearch">Search</label><input id="productSearch" type="search" placeholder="Search leggings, bra, wrap..." /></div>
+            <div class="filter-block"><label for="sortProducts">Sort by</label>
+              <select id="sortProducts">
+                <option value="featured">Featured</option><option value="new">Newest</option>
+                <option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+              </select>
+            </div>
+            <div class="filter-block"><span class="filter-title">Category</span><div class="chip-stack" id="categoryFilters"></div></div>
+            <div class="filter-block"><span class="filter-title">Activity</span><div class="chip-stack" id="activityFilters"></div></div>
+            <div class="filter-block"><span class="filter-title">Size</span><div class="chip-stack compact" id="sizeFilters"></div></div>
+            <div class="filter-block" id="backendStatus" style="font-size:0.78rem;color:var(--muted);">Connecting to backend...</div>
+          </aside>
+
+          <div class="product-area">
+            <div class="toolbar">
+              <div><strong id="resultCount">0 styles</strong><span id="activeFilterText">Showing all activewear</span></div>
+              <button class="text-button" type="button" id="clearFilters">Clear filters</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+            <p class="no-results" id="noResults">No products match those filters.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lookbook-band" id="lookbook">
+        <div class="lookbook-copy">
+          <p class="eyebrow">Lookbook</p><h2>One collection, four ways to wear it.</h2>
+          <p>Build full outfits around customer intent: studio flow, pilates sculpt, airport comfort, and weekend recovery.</p>
+        </div>
+        <div class="lookbook-grid">
+          <article><img src="./assets/yoga-collection.svg" alt="Plum yoga set flat lay" /><strong>Studio Flow</strong><span>Legging set + wrap layer</span></article>
+          <article><img src="./assets/yoga-hero.svg" alt="Women in coordinated yoga outfits" /><strong>Pilates Sculpt</strong><span>Sculpt bra + ribbed tank</span></article>
+          <article><img src="./assets/yoga-collection.svg" alt="Neutral activewear and towel flat lay" /><strong>Travel Ease</strong><span>Soft pant + travel hoodie</span></article>
+        </div>
+      </section>
+
+      <section class="fit-band" id="fit">
+        <div class="fit-copy">
+          <p class="eyebrow">Fit and Fabric</p><h2>Designed to reduce returns.</h2>
+          <p>Clear sizing, fabric notes, compression level, and care guidance help international shoppers buy with more confidence.</p>
+          <div class="fabric-grid">
+            <div><strong>AirLuxe</strong><span>Buttery-soft yoga fabric with light compression.</span></div>
+            <div><strong>SculptForm</strong><span>Medium compression for training and pilates.</span></div>
+            <div><strong>CloudRib</strong><span>Textured rib knit for tanks and light layers.</span></div>
+          </div>
+        </div>
+        <div class="size-card">
+          <div class="size-card-head"><strong>International Size Guide</strong><span>Inches</span></div>
+          <table>
+            <thead><tr><th>Size</th><th>Bust</th><th>Waist</th><th>Hip</th></tr></thead>
+            <tbody>
+              <tr><td>XS</td><td>31-33</td><td>24-26</td><td>34-36</td></tr>
+              <tr><td>S</td><td>33-35</td><td>26-28</td><td>36-38</td></tr>
+              <tr><td>M</td><td>35-38</td><td>28-31</td><td>38-41</td></tr>
+              <tr><td>L</td><td>38-41</td><td>31-34</td><td>41-44</td></tr>
+              <tr><td>XL</td><td>41-44</td><td>34-38</td><td>44-47</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="reviews-band" aria-label="Customer reviews">
+        <div class="section-heading"><p class="eyebrow">Customer Proof</p><h2>Reviews that sell the fit.</h2></div>
+        <div class="review-grid">
+          <article><span>5.0</span><p>"The waistband stays flat through hot yoga and the fabric feels expensive."</p><strong>Maya R., Toronto</strong></article>
+          <article><span>4.9</span><p>"Finally a set that looks polished enough for travel days after class."</p><strong>Emma L., London</strong></article>
+          <article><span>4.8</span><p>"Sizing was clear, shipping was easy, and the bra support is excellent."</p><strong>Sofia K., Berlin</strong></article>
+        </div>
+      </section>
+
+      <section class="shipping-band" id="shipping">
+        <div><p class="eyebrow">Worldwide Checkout</p><h2>Built for international buyers.</h2></div>
+        <div class="shipping-grid">
+          <div><strong>Payments</strong><span>Stripe Payment Links and PayPal checkout are ready to connect.</span></div>
+          <div><strong>Delivery</strong><span>US, Canada, UK, EU, Australia, Singapore, and more.</span></div>
+          <div><strong>Returns</strong><span>30-day returns with condition notes in checkout.</span></div>
+          <div><strong>Support</strong><span>Order tracking, FAQ, and account order history now live.</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="#top"><span class="brand-mark">S</span><span>Solara Yoga</span></a>
+        <p>Premium yoga activewear for studio, street, and long-haul comfort.</p>
+      </div>
+      <div>
+        <strong>Customer Care</strong>
+        <a href="#shipping">Shipping</a><a href="#shipping">Returns</a><a href="#fit">Size Guide</a>
+        <button type="button" class="footer-button" id="trackOrder">Track Order</button>
+      </div>
+      <div>
+        <strong>Account</strong>
+        <button type="button" class="footer-button" data-open-account="login">Login</button>
+        <button type="button" class="footer-button" data-open-account="register">Create Account</button>
+        <button type="button" class="footer-button" id="openWishlistFooter">Wishlist</button>
+      </div>
+      <form class="newsletter" id="newsletterForm">
+        <strong>Get 10% off your first set</strong>
+        <label for="newsletterEmail">Email address</label>
+        <div><input id="newsletterEmail" type="email" placeholder="you@example.com" required /><button type="submit">Join</button></div>
+        <p id="newsletterMessage">No spam. Just new drops, restocks, and fit tips.</p>
+      </form>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <aside class="cart-drawer drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping bag">
+      <div class="drawer-panel cart-panel">
+        <div class="drawer-head">
+          <div><p class="eyebrow">Shopping Bag</p><h2>Your selected pieces</h2></div>
+          <button class="round-button" type="button" id="closeCart" aria-label="Close cart">x</button>
+        </div>
+        <div class="cart-progress">
+          <span id="freeShippingText">Add $120 for free shipping</span>
+          <div><span id="shippingProgress"></span></div>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-empty" id="cartEmpty"><strong>Your bag is empty.</strong><span>Start with a bestselling set or save favorites for later.</span></div>
+        <div class="cart-summary">
+          <div><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div>
+          <div><span>Estimated shipping</span><strong id="cartShipping">$12</strong></div>
+          <div><span>Estimated total</span><strong id="cartTotal">$0</strong></div>
+          <button class="checkout-button" type="button" id="openCheckout">Checkout</button>
+          <button class="paypal-button" type="button" data-provider="paypal">PayPal Express</button>
+          <p class="checkout-note" id="checkoutNote">Your order will be processed by the Solara backend.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Account Modal -->
+    <section class="modal-layer" id="accountModal" aria-hidden="true" aria-label="Account">
+      <div class="modal-card account-card">
+        <div class="drawer-head">
+          <div><p class="eyebrow">My Account</p><h2 id="accountTitle">Login or create account</h2></div>
+          <button class="round-button" type="button" data-close-modal="accountModal">x</button>
+        </div>
+        <div class="account-tabs">
+          <button type="button" class="is-active" data-account-tab="login">Login</button>
+          <button type="button" data-account-tab="register">Register</button>
+        </div>
+        <form class="account-form" id="loginForm">
+          <label>Email<input type="email" name="email" required placeholder="you@example.com" /></label>
+          <label>Password<input type="password" name="password" required placeholder="Minimum 6 characters" /></label>
+          <div id="loginError" style="display:none;color:var(--danger);font-size:0.86rem;"></div>
+          <button class="primary-action full" type="submit">Sign In</button>
+        </form>
+        <form class="account-form is-hidden" id="registerForm">
+          <label>Full name<input type="text" name="name" required placeholder="Your name" /></label>
+          <label>Email<input type="email" name="email" required placeholder="you@example.com" /></label>
+          <label>Password<input type="password" name="password" required minlength="6" placeholder="Minimum 6 characters" /></label>
+          <div id="registerError" style="display:none;color:var(--danger);font-size:0.86rem;"></div>
+          <button class="primary-action full" type="submit">Create Account</button>
+        </form>
+        <div class="account-status" id="accountStatus">Create an account to save wishlist items and view order history.</div>
+        <div style="padding:0 24px 24px;display:flex;gap:12px;">
+          <button class="text-button" type="button" id="logoutButton" style="display:none;">Sign Out</button>
+          <a href="/track.html" class="text-button" style="font-size:0.86rem;">Track an order →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Quick View Modal -->
+    <section class="modal-layer" id="productModal" aria-hidden="true" aria-label="Product details">
+      <div class="modal-card product-detail-card">
+        <button class="round-button modal-close" type="button" data-close-modal="productModal">x</button>
+        <div id="productDetail"></div>
+      </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <section class="modal-layer" id="checkoutModal" aria-hidden="true" aria-label="Checkout">
+      <div class="modal-card checkout-card">
+        <div class="drawer-head">
+          <div><p class="eyebrow">Secure Checkout</p><h2>Shipping and payment</h2></div>
+          <button class="round-button" type="button" data-close-modal="checkoutModal">x</button>
+        </div>
+        <form class="checkout-form" id="checkoutForm">
+          <div class="form-grid">
+            <label>Email<input type="email" name="email" required placeholder="you@example.com" /></label>
+            <label>Country<select name="country"><option>United States</option><option>Canada</option><option>United Kingdom</option><option>Australia</option><option>Germany</option><option>Singapore</option></select></label>
+            <label>Full name<input type="text" name="name" required placeholder="Recipient name" /></label>
+            <label>Postal code<input type="text" name="postal" required placeholder="ZIP / Postal code" /></label>
+            <label class="wide">Address<input type="text" name="address" required placeholder="Street address" /></label>
+          </div>
+          <div class="payment-choice">
+            <button class="checkout-button" type="submit">Place Order</button>
+            <button class="paypal-button" type="button" data-provider="paypal">Pay with PayPal</button>
+          </div>
+          <p class="checkout-note" id="checkoutStatus">Orders are processed by the Solara backend.</p>
+        </form>
+      </div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

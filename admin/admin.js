@@ -3,7 +3,10 @@
    Dashboard, Products CRUD, Orders, Users, Reviews
    ═══════════════════════════════════════════════════════════════════════════ */
 
-const API = "";
+// When hosted on GitHub Pages, connect to local backend
+const API = window.location.hostname.includes("github.io")
+  ? "http://localhost:3000"
+  : "";
 let token = localStorage.getItem("solaraAdminToken") || "";
 let user = null;
 let currentOrderFilter = "all";

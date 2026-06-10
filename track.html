@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Order — Solara Yoga</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header" aria-label="Main navigation">
+    <a class="brand" href="/" aria-label="Solara Yoga home">
+      <span class="brand-mark">S</span><span>Solara Yoga</span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="/">Shop</a>
+      <a href="/#lookbook">Lookbook</a>
+      <a href="/#fit">Size Guide</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-link" href="/">← Back to Store</a>
+    </div>
+  </header>
+
+  <main class="track-page">
+    <div class="track-card">
+      <p class="eyebrow">Order Tracking</p>
+      <h2>Where is my order?</h2>
+      <p>Enter your order ID and the email you used at checkout.</p>
+
+      <form id="trackForm" style="display:grid;gap:14px;margin-top:20px;">
+        <label style="display:grid;gap:8px;font-weight:850;font-size:0.86rem;">
+          Order ID
+          <input type="text" name="orderId" required placeholder="e.g. SOL-A1B2C3D4" />
+        </label>
+        <label style="display:grid;gap:8px;font-weight:850;font-size:0.86rem;">
+          Email
+          <input type="email" name="email" required placeholder="you@example.com" />
+        </label>
+        <button class="primary-action full" type="submit">Track Order</button>
+      </form>
+      <p style="margin-top:12px;color:var(--muted);font-size:0.84rem;" id="trackError"></p>
+
+      <div class="track-result" id="trackResult" style="display:none;"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="border-top:1px solid var(--line);">
+    <div>
+      <a class="brand footer-brand" href="/"><span class="brand-mark">S</span><span>Solara Yoga</span></a>
+      <p>Premium yoga activewear for studio, street, and long-haul comfort.</p>
+    </div>
+    <div><strong>Customer Care</strong><a href="/#shipping">Shipping</a><a href="/#shipping">Returns</a><a href="/#fit">Size Guide</a></div>
+    <div><strong>Account</strong><a href="/">Login</a><a href="/">Create Account</a></div>
+    <div style="color:rgba(255,253,249,0.5);font-size:0.84rem;">&copy; 2026 Solara Yoga</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    const $ = s => document.querySelector(s);
+    const toast = $("#toast");
+
+    function formatMoney(v) {
+      return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(v);
+    }
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("is-visible");
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove("is-visible"), 2200);
+    }
+
+    // Check for order params in URL
+    const params = new URLSearchParams(window.location.search);
+    const orderFromUrl = params.get("order");
+    const emailFromUrl = params.get("email");
+
+    if (orderFromUrl && emailFromUrl) {
+      document.querySelector('[name="orderId"]').value = orderFromUrl;
+      document.querySelector('[name="email"]').value = emailFromUrl;
+      lookupOrder(orderFromUrl, emailFromUrl);
+    }
+
+    $("#trackForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      const form = new FormData(e.currentTarget);
+      const orderId = form.get("orderId").trim();
+      const email = form.get("email").trim();
+      lookupOrder(orderId, email);
+    });
+
+    async function lookupOrder(orderId, email) {
+      const result = $("#trackResult");
+      const error = $("#trackError");
+      result.style.display = "none";
+      error.textContent = "";
+
+      try {
+        const res = await fetch(`/api/orders/track?orderId=${encodeURIComponent(orderId)}&email=${encodeURIComponent(email)}`);
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+
+        const { order, items } = data;
+        const subtotal = items.reduce((s, i) => s + i.price * i.quantity, 0);
+
+        result.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <div>
+              <strong style="font-size:1.2rem;">Order ${order.id}</strong>
+              <p style="margin:4px 0;color:var(--muted);">Placed ${new Date(order.created_at).toLocaleDateString("en-US", { year:"numeric", month:"long", day:"numeric" })}</p>
+            </div>
+            <span class="track-order-status status-${order.status}">${order.status}</span>
+          </div>
+          <div class="track-items">
+            ${items.map(i => `
+              <div class="track-item">
+                <div><strong>${i.product_name}</strong><br /><span style="color:var(--muted);font-size:0.9rem;">${i.size} / ${i.color} × ${i.quantity}</span></div>
+                <strong>${formatMoney(i.price * i.quantity)}</strong>
+              </div>
+            `).join("")}
+          </div>
+          <div class="track-summary">
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Subtotal</span><span>${formatMoney(subtotal)}</span></div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Shipping</span><span>${order.shipping === 0 ? "Free" : formatMoney(order.shipping)}</span></div>
+            <div style="display:flex;justify-content:space-between;font-weight:900;font-size:1.1rem;margin-top:8px;"><span>Total</span><span>${formatMoney(order.total)}</span></div>
+          </div>
+          <p style="margin-top:16px;color:var(--muted);font-size:0.9rem;">
+            ${order.status === "confirmed" ? "Your order is being prepared. We'll notify you when it ships." : ""}
+            ${order.status === "shipped" ? "Your package is on the way! Track it with your carrier." : ""}
+            ${order.status === "delivered" ? "Delivered! We hope you love your Solara pieces." : ""}
+            ${order.status === "cancelled" ? "This order has been cancelled." : ""}
+            Ship to: ${order.country}
+          </p>
+        `;
+        result.style.display = "block";
+      } catch (err) {
+        error.textContent = err.message;
+      }
+    }
+  </script>
+</body>
+</html>

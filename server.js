@@ -14,12 +14,10 @@ const JWT_SECRET = process.env.JWT_SECRET || "solara-yoga-secret-change-in-produ
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/admin", express.static(path.join(__dirname, "admin"), { index: "index.html" }));
-
-// Redirect /admin to /admin/ for proper static serving
-app.get("/admin", (req, res) => {
-  res.redirect(301, "/admin/");
-});
+// Admin panel — explicit routing to avoid Express static redirect quirks
+app.get("/admin", (req, res) => res.sendFile(path.join(__dirname, "admin", "index.html")));
+app.get("/admin/", (req, res) => res.sendFile(path.join(__dirname, "admin", "index.html")));
+app.use("/admin", express.static(path.join(__dirname, "admin")));
 
 // ── Auth Middleware ───────────────────────────────────────────────────────────
 function authRequired(req, res, next) {
